@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Web App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Passion+One:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="pictures/icon.png" type="x-icon" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="heads passion-one-regular">
+        Capstone Project | Web Blog Application
+      </div>
+      <div class="blog">
+        <div class="button-row">
+          <div class="button-space"></div>
+          <div class="button-space">
+            <a href="/"><button class="btn">Home</button></a>
+          </div>
+          <div class="button-space">
+            <a href="/posts.ejs"><button class="btn">Posts</button></a>
+          </div>
+          <div class="button-space">
+            <a href="/write.ejs"><button class="btn">Write</button></a>
+          </div>
+          <div class="button-space">
+            <a href="https://github.com/faragobalazs"
+              ><button class="btn">Github</button></a
+            >
+          </div>
+        </div>
+        <!----->
+        <div class="blog-container">
+          <div class="text-title">Welcome</div>
+          <div class="text-container">
+            <p>
+              This a capstone project of my learning curve. The goal of this
+              project was to create a Blog web application using Node.js,
+              Express.js, and EJS. The application will allow users to create
+              and view blog posts. Posts will not persist between sessions as no
+              database will be used in this version of the application.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="foot passion-one-regular">
+      Balázs Faragó © <%= new Date().getFullYear() %>
+    </div>
+    <script>
+      const buttonsToFlash = document.querySelectorAll(".button-row .btn");
+
+      buttonsToFlash.forEach((button) => {
+        button.addEventListener("click", function (event) {
+          this.classList.add("btn-flashing");
+        });
+      });
+    </script>
+  </body>
+</html>

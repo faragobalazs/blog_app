@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Web App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Passion+One:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="pictures/icon.png" type="x-icon" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="heads passion-one-regular">
+        Capstone Project | Web Blog Application
+      </div>
+      <div class="blog">
+        <div class="button-row">
+          <div class="button-space"></div>
+          <div class="button-space">
+            <a href="/"><button class="btn">Home</button></a>
+          </div>
+          <div class="button-space">
+            <a href="/posts.ejs"><button class="btn">Posts</button></a>
+          </div>
+          <div class="button-space">
+            <a href="/write.ejs"><button class="btn">Write</button></a>
+          </div>
+          <div class="button-space">
+            <a href="https://github.com/faragobalazs"
+              ><button class="btn">Github</button></a
+            >
+          </div>
+        </div>
+        <!----->
+        <div class="blog-container">
+          <h2>Recent Posts</h2>
+          <% if(posts && posts.length > 0) { %> <% posts.forEach((post, index)=>
+          { %>
+          <!----->
+          <div class="post">
+            <h3><%= post.title %></h3>
+            <p><%= post.content %></p>
+            <form action="/delete" method="POST" class="delete-form">
+              <input type="hidden" name="postIndex" value="<%= index %>" />
+              <button type="submit" class="delete-btn">Delete</button>
+            </form>
+            <hr />
+          </div>
+          <% }); %> <% } else {%>
+          <p>No posts yet. Click "Write" to create a new post.</p>
+          <% } %>
+        </div>
+      </div>
+    </div>
+    <div class="foot passion-one-regular">
+      Balázs Faragó © <%= new Date().getFullYear() %>
+    </div>
+    <script>
+      const buttonsToFlash = document.querySelectorAll(".button-row .btn");
+
+      buttonsToFlash.forEach((button) => {
+        button.addEventListener("click", function (event) {
+          this.classList.add("btn-flashing");
+        });
+      });
+    </script>
+  </body>
+</html>

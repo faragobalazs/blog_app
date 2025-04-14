@@ -1,0 +1,222 @@
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+div {
+  border: 0px solid black;
+}
+
+/* ---------------------------------------------------------------------------------------- */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-grow: 1;
+}
+
+.heads {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../pictures/background.png);
+  background-size: 20%;
+  background-repeat: repeat;
+  height: 100px;
+  flex-shrink: 0;
+  font-size: 2.5em;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+/* ---------------------------------------------------------------------------------------- */
+
+.blog {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  min-height: calc(100% - 100px - 50px);
+  overflow-y: auto;
+}
+
+/* ---------------------------------------------------------------------------------------- */
+
+.button-row {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.button-space {
+  display: flex;
+  height: 50px;
+  margin-left: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  width: 150px;
+  height: 35px;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  border-width: 0px;
+  border-radius: 10px;
+  background-color: #e6f5ff;
+  box-shadow: 2px 2px 5px grey;
+}
+
+.btn-flashing {
+  width: 150px;
+  height: 35px;
+  display: inline-block;
+  text-align: center;
+  border-width: 0px;
+  border-radius: 10px;
+  background-color: #b3e0ff;
+  box-shadow: 2px 2px 5px darkgrey;
+}
+
+/* ---------------------------------------------------------------------------------------- */
+
+.blog-container {
+  width: 630px;
+}
+
+.text-title {
+  font-size: 2em;
+  font-weight: bold;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.text-container {
+  display: flex;
+  text-align: justify;
+  justify-content: center;
+  width: 630px;
+}
+
+/* ---------------------------------------------------------------------------------------- */
+
+.foot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../pictures/background.png);
+  background-size: 20%;
+  background-repeat: repeat;
+  height: 50px;
+  flex-shrink: 0;
+  font-size: 1.5em;
+  font-family: monospace;
+}
+
+/* ---------------------------------------------------------------------------------------- */
+
+.passion-one-regular {
+  font-family: "Passion One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ---------------------------------------------------------------------------------------- */
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 800px) {
+  .heads {
+    font-size: 1.2rem;
+    height: 5em;
+  }
+
+  .foot {
+    font-size: 1rem;
+    height: 2.5em;
+  }
+
+  .blog-container {
+    width: 95%;
+  }
+
+  .btn {
+    width: 8em;
+    height: 2em;
+    font-size: 0.9em;
+  }
+
+  .text-title {
+    font-size: 1.1rem;
+  }
+
+  p {
+    font-size: 0.9rem; /* Even smaller on very small screens */
+  }
+}
+
+@media (max-width: 500px) {
+  .heads {
+    font-size: 1rem;
+    height: 4em;
+  }
+
+  .foot {
+    font-size: 0.9em;
+    height: 2em;
+  }
+
+  .blog-container {
+    width: 100%;
+  }
+
+  .btn {
+    width: 10em;
+    height: 5em;
+    font-size: 0.4em;
+  }
+
+  .text-title {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 0.8rem; /* Even smaller on very small screens */
+  }
+}
+
+.post {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+}
+.post h2 {
+  margin-top: 0;
+}
+.delete-form {
+  display: inline;
+  margin-left: 10px;
+}
+.delete-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.delete-button:hover {
+  background-color: #cc0000;
+}
